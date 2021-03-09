@@ -1,0 +1,128 @@
+.landing {
+    height: 100vh;
+    width: 100%;
+    overflow: auto;
+    background: linear-gradient(90deg, #1CB5E0 0%, #000851 100%);
+}
+
+.info-wrapper {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+@media screen and (orientation: portrait) {
+    .info-wrapper { max-width: 80%; }
+}
+
+/* @media screen and (orientation: landscape) {
+    .info-wrapper { max-height: 80%; }
+} */
+
+img.ri
+{
+	position: absolute;
+	max-width: 80%;
+	top: 10%;
+	left: 10%;
+}
+
+img.ri:empty
+{
+	top: 25%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+@media screen and (orientation: portrait) {
+    img.ri { max-width: 50%; }
+}
+
+@media screen and (orientation: landscape) {
+    img.ri { max-height: 50%; }
+}
+
+.information {
+    background-color: black;
+    opacity: 0.8;
+    width: 80%;
+    margin: auto;
+    border-radius: 10px;
+    color: white;
+    position: absolute;
+	top: 80%;
+    left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+    padding: 2%;
+    margin-bottom: 5%;
+}
+
+@media screen and (orientation: portrait) {
+    .information { max-width: 50%; }
+}
+
+/* @media screen and (orientation: landscape) {
+    .information  { max-height: 50%; }
+} */
+
+.title {
+    font-size: 6vw;
+    line-height: 6vw;
+    text-align: center;
+    width: 100%;
+}
+
+@media screen and (min-width: 1200px) {
+    .title {
+       font-size: 70px;
+       line-height: 70px;
+    };
+}
+
+.sub-title {
+    font-size: 2.5vw;
+    line-height: 3vw;
+    text-align: center;
+    width: 100%;
+}
+
+@media screen and (min-width: 1200px) {
+    .sub-title {
+       font-size: 36px;
+       line-height: 36px;
+    };
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img.link-image {
+    padding: 2vw;
+    width: 10vw;
+    max-width: 80px;
+    max-height: 200px;
+}
+
+@media screen and (min-width: 1200px) {
+    img.link-image {
+       padding: 10px 20px;
+    };
+}
