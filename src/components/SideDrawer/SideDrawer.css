@@ -37,4 +37,23 @@
 .side-drawer a:hover,
 .side-drawer a:active {
     color: blue;
+    text-decoration: none;
+}
+
+.picture-wrapper {
+    width: 80%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.side-drawer-picture {
+    height: 90%;
+    width: 40%;
+    align-items: center;
+}
+
+.side-drawer-picture {
+    align-items: center;
 }

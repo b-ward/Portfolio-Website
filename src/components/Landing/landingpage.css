@@ -2,7 +2,6 @@
     height: 100vh;
     width: 100%;
     overflow: auto;
-    background: linear-gradient(90deg, #1CB5E0 0%, #000851 100%);
 }
 
 .info-wrapper {
@@ -73,7 +72,7 @@ img.ri:empty
 }
 
 @media screen and (orientation: portrait) {
-    .information { max-width: 50%; }
+    .information { top: 65%; }
 }
 
 /* @media screen and (orientation: landscape) {
@@ -126,3 +125,9 @@ img.link-image {
        padding: 10px 20px;
     };
 }
+
+/* @media screen and (max-width: 7500px) {
+    .information {
+       width: 50%;
+    };
+} */

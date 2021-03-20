@@ -10,6 +10,12 @@ const SideDrawer = props => {
     return (
     <nav className={drawerClass} >
         <ul>
+            <li>
+                <a href="/" className="picture-wrapper">
+                    <img src='../BrendonWard.png' alt="Brendon Ward" className="side-drawer-picture"/>
+                    <div className="side-drawer-picture-caption">Brendon Ward</div>
+                </a>
+            </li>
             <li><a href="/About">About Me</a></li>
             <li><a href="/Resume">Resume</a></li>
             <li><a href="/Projects">Personal Projects</a></li>

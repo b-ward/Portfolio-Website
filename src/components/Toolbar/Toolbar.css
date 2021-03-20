@@ -1,7 +1,7 @@
 .toolbar {
     width: 100%;
     position: fixed;
-    background: linear-gradient(90deg, #1CB5E0 0%, #000851 100%);
+    background:rgba(0, 0, 255,0);/* give opacity to bg color only */
     height: 56px;
 }
 

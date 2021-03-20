@@ -1,0 +1,30 @@
+.projects-wrapper {
+    text-align: center;
+}
+
+.projects-title {
+    color:white;
+    padding-bottom: 2vh;
+}
+
+.cards-wrapper {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+}
+
+.card a,
+.card a:hover,
+.card a:active {
+    text-decoration: none;
+    color: black;
+}
+
+/* .projects-deck {
+    margin: 5rem;
+}
+
+@media screen and (orientation: portrait) {
+    .projects-deck { flex-direction: column; }
+} */

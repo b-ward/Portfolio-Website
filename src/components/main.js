@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Landing from './Landing/landingpage';
 import About from './aboutme';
 import Resume from './resume';
-import Projects from './projects';
+import Projects from './Projects/projects';
 import Photos from './photos';
 import Contact from './contact';
 
