@@ -1,0 +1,24 @@
+.trainGame-wrapper {
+    text-align: center;
+    color:white;
+}
+
+.trainGame-title {
+    padding-bottom: 2vh;
+    width: 60%;
+    margin: auto;
+}
+
+.solutions {
+    padding-top: 2vh;
+    padding-bottom: 20vh;
+}
+
+.error {
+    padding-top: 2vh;
+    color: red;
+}
+
+.app-image {
+    width: 50%;
+}
