@@ -27,8 +27,11 @@ function HelpModal(props) {
           </p>
           <p>
             This program will accept a 4-digit number and then generate all the possible solutions based
-            off this number. It will use addition, subtraction, multiplication and division to find all solutions.
+            off this number. It will use addition, subtraction, multiplication, division and powers to find all solutions.
             It is worth noting that not every four digit number has a solution associated with it.
+          </p>
+          <p>
+            Powers work like this: The number 2271 can be split into 2^2+7-1 = 10
           </p>
         </Modal.Body>
       </Modal>
