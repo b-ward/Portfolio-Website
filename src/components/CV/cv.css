@@ -1,0 +1,18 @@
+.cv-title {
+    color:white;
+}
+
+.cv-title.main {
+    text-align: center;
+}
+
+.cv-wrapper {
+    text-align: left;
+}
+
+.card a,
+.card a:hover,
+.card a:active {
+    text-decoration: none;
+    color: black;
+}

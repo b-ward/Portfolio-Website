@@ -16,10 +16,10 @@ const SideDrawer = props => {
                     <div className="side-drawer-picture-caption">Brendon Ward</div>
                 </a>
             </li>
-            <li><a href="/About">About Me</a></li>
-            <li><a href="/CV">CV</a></li>
-            <li><a href="/Projects">Personal Projects</a></li>
-            <li><a href="/Photos">Photography</a></li>
+            <li><a href="/About" className="drawer-item">About Me</a></li>
+            <li><a href="/CV" className="drawer-item">CV</a></li>
+            <li><a href="/Projects" className="drawer-item">Personal Projects</a></li>
+            <li><a href="/Photos" className="drawer-item">Photography</a></li>
         </ul>
     </nav>)
 };

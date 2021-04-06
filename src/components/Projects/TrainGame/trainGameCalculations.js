@@ -33,7 +33,6 @@ function operandToString(operand) {
 }
 
 function getSolutions(number){
-    console.log("The solutions are as follows:");
     solutions = [];
     numberList = number.split("");
     count = 0;
@@ -346,7 +345,6 @@ function getSolutions(number){
         }
         operands[2] = (operands[2] + 1);
     }
-    console.log(solutions);
     return solutions;
 }
 

@@ -34,6 +34,11 @@
     font-size: 1.2rem;
 }
 
+.drawer-item {
+    display: block;
+    width: 80%;
+}
+
 .side-drawer a:hover,
 .side-drawer a:active {
     color: blue;

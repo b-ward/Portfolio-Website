@@ -24,7 +24,6 @@ class App extends Component {
 
   render(){
     let backdrop;
-    console.log(this.state.sideDrawerOpen)
 
     if(this.state.sideDrawerOpen){
       backdrop=<Backdrop click={this.backdropClickHandler}/>;

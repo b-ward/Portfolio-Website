@@ -12,6 +12,8 @@
     "react-bootstrap": "^1.5.1",
     "react-dom": "^17.0.1",
     "react-mdl": "^2.1.0",
+    "react-native-sound-level": "^1.1.5",
+    "react-native-system-setting": "^1.7.6",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.1.0"

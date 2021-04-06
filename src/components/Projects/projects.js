@@ -8,7 +8,7 @@ class Projects extends Component {
             <div className="projects-wrapper">
                 <div className="projects-title"><h1>Personal Projects</h1></div>
                 <CardDeck style={{margin: '2rem 5rem 2rem 5rem'}}>
-                    <div class="col-sm-6 col-lg-3 py-2">
+                    <div className="col-sm-6 col-lg-3 py-2">
                         <Card className="card" style={{minWidth: '200px'}}>
                             <a href = "/Projects/TrainGame">
                                 <Card.Img variant="top" src="../train_numbers.jpg" style={{height: '150px'}} />
@@ -21,7 +21,7 @@ class Projects extends Component {
                             </a>
                         </Card>
                     </div>
-                    <div class="col-sm-6 col-lg-3 py-2">
+                    <div className="col-sm-6 col-lg-3 py-2">
                         <Card className="card" style={{minWidth: '200px'}}>
                             <a href = "/Projects/UrlShort" >
                                 <Card.Img variant="top" src="../shorten.jpg" style={{height: '150px'}} />
@@ -34,7 +34,7 @@ class Projects extends Component {
                             </a>
                         </Card>
                     </div>
-                    <div class="col-sm-6 col-lg-3 py-2">
+                    <div className="col-sm-6 col-lg-3 py-2">
                         <Card className="card" style={{minWidth: '200px'}}>
                             <a href = "/Projects/AlexaSpotify" >
                                 <Card.Img variant="top" src="../spotify-alexa.png" style={{height: '150px'}} />
@@ -47,7 +47,7 @@ class Projects extends Component {
                             </a>
                         </Card>
                     </div>
-                    <div class="col-sm-6 col-lg-3 py-2">
+                    <div className="col-sm-6 col-lg-3 py-2">
                         <Card className="card" style={{minWidth: '200px'}}>
                             <a href = "/Projects/Arbitrage" >
                                 <Card.Img variant="top" src="../arbitrage.jpg" style={{height: '150px'}} />
@@ -60,7 +60,7 @@ class Projects extends Component {
                             </a>
                         </Card>
                     </div>
-                    <div class="col-sm-6 col-lg-3 py-2">
+                    <div className="col-sm-6 col-lg-3 py-2">
                         <Card className="card" style={{minWidth: '200px'}}>
                             <a href = "/Projects/Noise" >
                                 <Card.Img variant="top" src="../angry.png" style={{height: '150px'}}/>

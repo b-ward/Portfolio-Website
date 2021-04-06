@@ -18,7 +18,7 @@ function HelpModal(props) {
         </Modal.Header>
         <Modal.Body>
           <p>
-            This program is based off a game played on Sydney Trains. Each carriage has a unique four-digit
+            This program is based on a game played on Sydney Trains. Each carriage has a unique four-digit
             identifying number associated with it. The aim of the game is to use each of the digits with operations
             in order to generate the number ten.
           </p>
@@ -125,10 +125,9 @@ class TrainGame extends Component {
     }
 
     render() {
-        console.log(this.state)
         return(
             <div className="trainGame-wrapper">
-                <div class="row" style={{width: '100%', margin: 'auto'}}>
+                <div className="row" style={{width: '100%', margin: 'auto'}}>
                     <div style={{position: "absolute", left: 20}}>
                         <Button className="made-button" variant="primary" onClick={() => this.setState({madeModalShow: true})}>
                             Creation

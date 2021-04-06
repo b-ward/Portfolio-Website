@@ -60,7 +60,8 @@ img.ri:empty
     border-radius: 10px;
     color: white;
     position: absolute;
-	top: 80%;
+    margin-top:50px;
+	top: 70%;
     left: 50%;
 	-webkit-transform: translate(-50%, -50%);
 	-moz-transform: translate(-50%, -50%);
@@ -72,7 +73,7 @@ img.ri:empty
 }
 
 @media screen and (orientation: portrait) {
-    .information { top: 65%; }
+    .information { top: 50%; }
 }
 
 /* @media screen and (orientation: landscape) {
