@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import { Card, Row, Col } from 'react-bootstrap';
-import './cv.css';
+import './card.css';
 
-class CVCard extends Component {
+class SharedCard extends Component {
     render() {
         return(
             <div className="col-sm-12 col-lg-12">
@@ -15,9 +15,9 @@ class CVCard extends Component {
                         }
                         <Col>
                             <Card.Body>
-                                <Card.Title>{this.props.cvCardTitle}</Card.Title>
+                                <Card.Title>{this.props.cardTitle}</Card.Title>
                                 <Card.Text>
-                                {this.props.cvCardBody}
+                                {this.props.cardBody}
                                 </Card.Text>
                             </Card.Body>
                         </Col>
@@ -28,4 +28,4 @@ class CVCard extends Component {
     }
 }
 
-export default CVCard;
+export default SharedCard;

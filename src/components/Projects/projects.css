@@ -14,9 +14,13 @@
     width: 100%;
 }
 
-.card a,
-.card a:hover,
-.card a:active {
-    text-decoration: none;
+.project-card a {
     color: black;
+    text-decoration: none;
+}
+
+.project-card a:hover,
+.project-card a:active {
+    color: black;
+    text-decoration: none;
 }

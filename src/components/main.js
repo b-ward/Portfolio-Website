@@ -1,11 +1,11 @@
 import React from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Landing from './Landing/landingpage';
-import About from './aboutme';
+import About from './About/about';
 import CV from './CV/cv';
 import Projects from './Projects/projects';
 import TrainGame from './Projects/TrainGame/trainGame';
-import Photos from './photos';
+import Photos from './Photos/photos';
 import Contact from './contact';
 import NoisyDetector from './Projects/NoisyDetector/noisyDetector';
 

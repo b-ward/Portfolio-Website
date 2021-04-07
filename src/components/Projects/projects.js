@@ -9,7 +9,7 @@ class Projects extends Component {
                 <div className="projects-title"><h1>Personal Projects</h1></div>
                 <CardDeck style={{margin: '2rem 5rem 2rem 5rem'}}>
                     <div className="col-sm-6 col-lg-3 py-2">
-                        <Card className="card" style={{minWidth: '200px'}}>
+                        <Card className="project-card" style={{minWidth: '200px'}}>
                             <a href = "/Projects/TrainGame">
                                 <Card.Img variant="top" src="../train_numbers.jpg" style={{height: '150px'}} />
                                 <Card.Body>
@@ -22,7 +22,7 @@ class Projects extends Component {
                         </Card>
                     </div>
                     <div className="col-sm-6 col-lg-3 py-2">
-                        <Card className="card" style={{minWidth: '200px'}}>
+                        <Card className="project-card" style={{minWidth: '200px'}}>
                             <a href = "/Projects/UrlShort" >
                                 <Card.Img variant="top" src="../shorten.jpg" style={{height: '150px'}} />
                                 <Card.Body>
@@ -35,7 +35,7 @@ class Projects extends Component {
                         </Card>
                     </div>
                     <div className="col-sm-6 col-lg-3 py-2">
-                        <Card className="card" style={{minWidth: '200px'}}>
+                        <Card className="project-card" style={{minWidth: '200px'}}>
                             <a href = "/Projects/AlexaSpotify" >
                                 <Card.Img variant="top" src="../spotify-alexa.png" style={{height: '150px'}} />
                                 <Card.Body>
@@ -48,7 +48,7 @@ class Projects extends Component {
                         </Card>
                     </div>
                     <div className="col-sm-6 col-lg-3 py-2">
-                        <Card className="card" style={{minWidth: '200px'}}>
+                        <Card className="project-card" style={{minWidth: '200px'}}>
                             <a href = "/Projects/Arbitrage" >
                                 <Card.Img variant="top" src="../arbitrage.jpg" style={{height: '150px'}} />
                                 <Card.Body>
@@ -61,13 +61,26 @@ class Projects extends Component {
                         </Card>
                     </div>
                     <div className="col-sm-6 col-lg-3 py-2">
-                        <Card className="card" style={{minWidth: '200px'}}>
+                        <Card className="project-card" style={{minWidth: '200px'}}>
                             <a href = "/Projects/Noise" >
                                 <Card.Img variant="top" src="../angry.png" style={{height: '150px'}}/>
                                 <Card.Body>
                                     <Card.Title>Noisy Detector</Card.Title>
                                     <Card.Text style={{height: '80px', padding: '20px 0'}}>
                                     Uses the microphone to detect when you are being too loud.
+                                    </Card.Text>
+                                </Card.Body>
+                            </a>
+                        </Card>
+                    </div>
+                    <div className="col-sm-6 col-lg-3 py-2">
+                        <Card className="project-card" style={{minWidth: '200px'}}>
+                            <a href = "/Projects/Analytics" >
+                                <Card.Img variant="top" src="../facebook.png" style={{height: '150px'}}/>
+                                <Card.Body>
+                                    <Card.Title>Facebook Analytics</Card.Title>
+                                    <Card.Text style={{height: '80px', padding: '20px 0'}}>
+                                    Data analytics on Facebook messages.
                                     </Card.Text>
                                 </Card.Body>
                             </a>

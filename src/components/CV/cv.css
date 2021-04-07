@@ -9,10 +9,3 @@
 .cv-wrapper {
     text-align: left;
 }
-
-.card a,
-.card a:hover,
-.card a:active {
-    text-decoration: none;
-    color: black;
-}
