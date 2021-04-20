@@ -86,6 +86,19 @@ class Projects extends Component {
                             </a>
                         </Card>
                     </div>
+                    <div className="col-sm-6 col-lg-3 py-2">
+                        <Card className="project-card" style={{minWidth: '200px'}}>
+                            <a href = "/Projects/Analytics" >
+                                <Card.Img variant="top" src="../facebook.png" style={{height: '150px'}}/>
+                                <Card.Body>
+                                    <Card.Title>TRIO</Card.Title>
+                                    <Card.Text style={{height: '80px', padding: '20px 0'}}>
+                                    Data analytics on Facebook messages.
+                                    </Card.Text>
+                                </Card.Body>
+                            </a>
+                        </Card>
+                    </div>
                 </CardDeck>
             </div>
         )

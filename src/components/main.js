@@ -8,6 +8,7 @@ import TrainGame from './Projects/TrainGame/trainGame';
 import Photos from './Photos/photos';
 import Contact from './contact';
 import NoisyDetector from './Projects/NoisyDetector/noisyDetector';
+import Arbitrage from './Projects/Arbitrage/arbitrage';
 
 const Main = () => (
     <Router>
@@ -16,6 +17,7 @@ const Main = () => (
             <Route exact path ="/About" component={About}/>
             <Route exact path ="/CV" component={CV}/>
             <Route exact path ="/Projects" component={Projects}/>
+            <Route exact path ="/Projects/Arbitrage" component={Arbitrage}/>
             <Route exact path ="/Projects/TrainGame" component={TrainGame}/>
             <Route exact path ="/Projects/Noise" component={NoisyDetector}/>
             <Route exact path ="/Photos" component={Photos}/>

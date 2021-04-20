@@ -19,7 +19,7 @@ const SideDrawer = props => {
             <li><a href="/About" className="drawer-item">About Me</a></li>
             <li><a href="/CV" className="drawer-item">CV</a></li>
             <li><a href="/Projects" className="drawer-item">Personal Projects</a></li>
-            <li><a href="/Photos" className="drawer-item">Photography</a></li>
+            <li><a href="/Photos" className="drawer-item">Photos and Videos</a></li>
         </ul>
     </nav>)
 };
