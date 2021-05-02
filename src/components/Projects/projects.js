@@ -23,12 +23,12 @@ class Projects extends Component {
                     </div>
                     <div className="col-sm-6 col-lg-3 py-2">
                         <Card className="project-card" style={{minWidth: '200px'}}>
-                            <a href = "/Projects/UrlShort" >
-                                <Card.Img variant="top" src="../shorten.jpg" style={{height: '150px'}} />
+                            <a href = "/Projects/Arbitrage" >
+                                <Card.Img variant="top" src="../arbitrage.jpg" style={{height: '150px'}} />
                                 <Card.Body>
-                                    <Card.Title>URL Shortener</Card.Title>
-                                    <Card.Text style={{height: '80px', padding: '30px 0'}}>
-                                    Enter a URL to shorten it.
+                                    <Card.Title>Arbitrage Betting</Card.Title>
+                                    <Card.Text style={{height: '80px'}}>
+                                    A program that aggregates betting odds from different sites to find profitable arbitrage bets.
                                     </Card.Text>
                                 </Card.Body>
                             </a>
@@ -42,19 +42,6 @@ class Projects extends Component {
                                     <Card.Title>Alexa Spotify</Card.Title>
                                     <Card.Text style={{height: '80px'}}>
                                     Use Alexa to play the most recently added songs to a playlist on Spotify.
-                                    </Card.Text>
-                                </Card.Body>
-                            </a>
-                        </Card>
-                    </div>
-                    <div className="col-sm-6 col-lg-3 py-2">
-                        <Card className="project-card" style={{minWidth: '200px'}}>
-                            <a href = "/Projects/Arbitrage" >
-                                <Card.Img variant="top" src="../arbitrage.jpg" style={{height: '150px'}} />
-                                <Card.Body>
-                                    <Card.Title>Arbitrage Betting</Card.Title>
-                                    <Card.Text style={{height: '80px'}}>
-                                    A program that aggregates betting odds from different sites to find profitable arbitrage bets.
                                     </Card.Text>
                                 </Card.Body>
                             </a>
@@ -88,12 +75,12 @@ class Projects extends Component {
                     </div>
                     <div className="col-sm-6 col-lg-3 py-2">
                         <Card className="project-card" style={{minWidth: '200px'}}>
-                            <a href = "/Projects/Analytics" >
-                                <Card.Img variant="top" src="../facebook.png" style={{height: '150px'}}/>
+                            <a href = "/Projects/Trio" >
+                                <Card.Img variant="top" src="../card-games.jpg" style={{height: '150px'}}/>
                                 <Card.Body>
-                                    <Card.Title>TRIO</Card.Title>
+                                    <Card.Title>Trio</Card.Title>
                                     <Card.Text style={{height: '80px', padding: '20px 0'}}>
-                                    Data analytics on Facebook messages.
+                                    A virtual version of the card game Trio
                                     </Card.Text>
                                 </Card.Body>
                             </a>

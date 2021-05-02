@@ -1,43 +1,58 @@
 //Need to:
 //Clean up code
 //Make output text more readable
-//Include loading spinner while results load
-//API key rotation?
 //Help and Creation
 
 async function getArbitrageBets() {
-    var sportNames = await getSportsNames()
-    var odds = await getOdds(sportNames);
+    var sports = await getSportsNames();
+    var odds = await getOdds(sports);
     return odds
 }
 
 async function getSportsNames() {
-    // var apiKey = "697ebd06526cf79c2ed9defdbd248d16";
-    var apiKey = "8c3a031b0cf823ef8d7302ff1f35d22c";
-    var sportsRequest = new Request('https://api.the-odds-api.com/v3/sports/?apiKey='.concat(apiKey));
+    //There is no limit request on the sports endpoint so we can use the same API key every time
+    var sportsRequest = new Request('https://api.the-odds-api.com/v3/sports/?apiKey=f039cbd515b8e6e21ac8130decb39023');
     let response = await fetch(sportsRequest);
     let sportsNameData = await response.text();
     sportsNameData = JSON.parse(sportsNameData)
-    // console.log(sportsNameData)
     var sports = [];
-    var i;
-    for (i=0; i < sportsNameData['data'].length; i++) {
-        sports.push(sportsNameData['data'][i]['key'])
+    var sport;
+    for (sport of sportsNameData['data']) {
+        sports.push(sport['key'])
     }
-    // console.log(sports)
     return(sports)
 }
 
 async function getOdds(sports) {
     var output=""
     var stake=100
-    var sport
-    // var apiKey = "697ebd06526cf79c2ed9defdbd248d16";
-    var apiKey = "8c3a031b0cf823ef8d7302ff1f35d22c";
     var margin = 0;
-    console.log(sports)
-    for (sport=0; sport < sports.length; sport++){
-        var sportsRequest = new Request('https://api.the-odds-api.com/v3/odds/?apiKey='.concat(apiKey,'&sport=',sports[sport],'&region=au&mkt=h2h'));
+    var sport;
+    var validApiKey;
+    var apiKey;
+    var apiKeyList = [
+        "697ebd06526cf79c2ed9defdbd248d16",
+        "a6974ab74034b4611ec8d37d1cb8db37",
+        "f039cbd515b8e6e21ac8130decb39023",
+        "7e458c2f18d77cc342b8c4f1b18937eb",
+        "ad0ffe9b1595cc5e7a70acb3ed485a23",
+        "61d155851e9f5dad6251c7b6df8e741a",
+        "d417071c8b31608a7221536cfd6d9c39",
+        "94a35ec9f4fac82d0085331d2ef827b1",
+        "93be55151e4a1fa66ac224b319dc1981",
+        "159c7f9bf8416374fd316ade88b8eaed"
+    ]
+    //Get Valid API Key
+    for (apiKey of apiKeyList) {
+        var sportsRequest = new Request('https://api.the-odds-api.com/v3/odds/?apiKey='.concat(apiKey,'&sport=',sports[0],'&region=au&mkt=h2h'));
+        let response = await fetch(sportsRequest);
+        if (response['status']===200){
+            validApiKey = apiKey
+        }
+    }
+
+    for (sport of sports){
+        sportsRequest = new Request('https://api.the-odds-api.com/v3/odds/?apiKey='.concat(validApiKey,'&sport=',sport,'&region=au&mkt=h2h'));
         let response = await fetch(sportsRequest);
         let oddsData = await response.text();
         oddsData = JSON.parse(oddsData)
@@ -87,7 +102,7 @@ async function getOdds(sports) {
                                 output = output.concat('\n','Game Time: ',new Date(oddsData['data'][match]['commence_time']*1000))
                                 output = output.concat('\n',oddsData['data'][match]['teams'])
                                 output = output.concat('\n','Betting Site: ',sites[site2]['site_nice'])
-                                output = output.concat('\n',oddsData['data'][match]['teams'][0])
+                                output = output.concat('\n','Bet On: ',oddsData['data'][match]['teams'][0])
                                 output = output.concat('\n','Bet: ',sites[site2]['odds']['h2h'][0],' Lay: ',layBets[0].toString()) 
                                 output = output.concat('\n','Difference: ',(sites[site2]['odds']['h2h'][0] - layBets[0]))
                                 output = output.concat('\n','----------------')
@@ -96,7 +111,7 @@ async function getOdds(sports) {
                                 output = output.concat('\n','Game Time: ',new Date(oddsData['data'][match]['commence_time']*1000))
                                 output = output.concat('\n',oddsData['data'][match]['teams'])
                                 output = output.concat('\n','Betting Site: ',sites[site2]['site_nice'])
-                                output = output.concat('\n',oddsData['data'][match]['teams'][1])
+                                output = output.concat('\n','Bet On: ',oddsData['data'][match]['teams'][1])
                                 output = output.concat('\n','Bet: ',sites[site2]['odds']['h2h'][1],' Lay: ',layBets[1].toString()) 
                                 output = output.concat('\n','Difference: ',(sites[site2]['odds']['h2h'][1] - layBets[1]))
                                 output = output.concat('\n','----------------')
@@ -147,7 +162,7 @@ async function getOdds(sports) {
                                 output = output.concat('\n' , 'Game Time: ',new Date(oddsData['data'][match]['commence_time']*1000))
                                 output = output.concat('\n' , oddsData['data'][match]['teams'])
                                 output = output.concat('\n' , 'Betting Site: ',sites[site]['site_nice'])
-                                output = output.concat('\n' , oddsData['data'][match]['teams'][0])
+                                output = output.concat('\n' , 'Bet On: ',oddsData['data'][match]['teams'][0])
                                 output = output.concat('\n' , 'Bet: ' , sites[site]['odds']['h2h'][0] , ' Lay: ' , layBets[0].toString()) 
                                 output = output.concat('\n' , 'Difference: ' , sites[site]['odds']['h2h'][0] - layBets[0].toString()) 
                                 output = output.concat('\n' , '----------------')
@@ -156,7 +171,7 @@ async function getOdds(sports) {
                                 output = output.concat('\n' , 'Game Time: ',new Date(oddsData['data'][match]['commence_time']*1000))
                                 output = output.concat('\n' , oddsData['data'][match]['teams'])
                                 output = output.concat('\n' , 'Betting Site: ',sites[site]['site_nice'])
-                                output = output.concat('\n' , oddsData['data'][match]['teams'][1])
+                                output = output.concat('\n' , 'Bet On: ',oddsData['data'][match]['teams'][1])
                                 output = output.concat('\n' , 'Bet: ' , sites[site]['odds']['h2h'][1] , ' Lay: ' , layBets[1].toString()) 
                                 output = output.concat('\n' , 'Difference: ' , sites[site]['odds']['h2h'][1] - layBets[1].toString()) 
                                 output = output.concat('\n' , '----------------')
@@ -165,7 +180,7 @@ async function getOdds(sports) {
                                 output = output.concat('\n' , 'Game Time: ',new Date(oddsData['data'][match]['commence_time']*1000))
                                 output = output.concat('\n' , oddsData['data'][match]['teams'])
                                 output = output.concat('\n' , 'Betting Site: ',sites[site]['site_nice'])
-                                output = output.concat('\n' , 'Draw')
+                                output = output.concat('\n' , 'Bet On: ','Draw')
                                 output = output.concat('\n' , 'Bet: ' , sites[site]['odds']['h2h'][2] , ' Lay: ' , layBets[2].toString()) 
                                 output = output.concat('\n' , 'Difference: ' , sites[site]['odds']['h2h'][2] - layBets[2].toString()) 
                                 output = output.concat('\n' , '----------------')

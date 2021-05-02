@@ -1,3 +1,13 @@
+# Publishing changes to Netlify
+
+Push code to GitHub
+Run "npm start" and ensure the local build is running as expected
+Run "npm run build" to build a production version of the application
+Run "netlify deploy" and specify "build" as the publish directory, this will publish the application to a draft URL. Check out this URL to ensure everything runs as expected.
+Run "netlify deploy --prod" and specify "build" as the publish directory, this will deploy to the production version of the site: https://bward-portfolio.netlify.app
+
+For local builds, run: npm start
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
