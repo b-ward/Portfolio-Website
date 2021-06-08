@@ -10,6 +10,7 @@ import Contact from './contact';
 import NoisyDetector from './Projects/NoisyDetector/noisyDetector';
 import Arbitrage from './Projects/Arbitrage/arbitrage';
 import TrioHome from './Projects/Trio/trioHome';
+import TrioGame from './Projects/Trio/trioGame';
 
 const Main = () => (
     <Router>
@@ -20,6 +21,7 @@ const Main = () => (
             <Route exact path ="/Projects" component={Projects}/>
             <Route exact path ="/Projects/Arbitrage" component={Arbitrage}/>
             <Route exact path ="/Projects/Trio" component={TrioHome}/>
+            <Route exact path ="/Projects/TrioGame" component={TrioGame}/>
             <Route exact path ="/Projects/TrainGame" component={TrainGame}/>
             <Route exact path ="/Projects/Noise" component={NoisyDetector}/>
             <Route exact path ="/Photos" component={Photos}/>

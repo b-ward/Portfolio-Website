@@ -34,7 +34,7 @@ class Projects extends Component {
                             </a>
                         </Card>
                     </div>
-                    <div className="col-sm-6 col-lg-3 py-2">
+                    {/* <div className="col-sm-6 col-lg-3 py-2">
                         <Card className="project-card" style={{minWidth: '200px'}}>
                             <a href = "/Projects/AlexaSpotify" >
                                 <Card.Img variant="top" src="../spotify-alexa.png" style={{height: '150px'}} />
@@ -72,10 +72,10 @@ class Projects extends Component {
                                 </Card.Body>
                             </a>
                         </Card>
-                    </div>
+                    </div> */}
                     <div className="col-sm-6 col-lg-3 py-2">
                         <Card className="project-card" style={{minWidth: '200px'}}>
-                            <a href = "/Projects/Trio" >
+                            <a href = "/Projects/TrioGame" >
                                 <Card.Img variant="top" src="../card-games.jpg" style={{height: '150px'}}/>
                                 <Card.Body>
                                     <Card.Title>Trio</Card.Title>
