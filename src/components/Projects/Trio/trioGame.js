@@ -213,11 +213,11 @@ class TrioGame extends Component {
   //Changes the image and rules (what instructions are displayed) when the button is clicked
   instruction_change() {
     if (this.state.instruction_button === true){
-      this.state.instruction_button = false;
+      this.setState({instruction_button: false});
       document.getElementById('instruction_switch').src = '../Trio/Images/OFF.png';
     }
     else if (this.state.instruction_button === false){
-      this.state.instruction_button = true;
+      this.setState({instruction_button: true});
       document.getElementById('instruction_switch').src = '../Trio/Images/ON.png';
     }
   }
