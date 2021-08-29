@@ -6,11 +6,12 @@ import CV from './CV/cv';
 import Projects from './Projects/projects';
 import TrainGame from './Projects/TrainGame/trainGame';
 import Photos from './Photos/photos';
-import Contact from './contact';
 import NoisyDetector from './Projects/NoisyDetector/noisyDetector';
 import Arbitrage from './Projects/Arbitrage/arbitrage';
 import TrioHome from './Projects/Trio/trioHome';
 import TrioGame from './Projects/Trio/trioGame';
+import Music from './Music/music';
+import BusinessBrains from './BusinessBrains/businessBrains';
 
 const Main = () => (
     <Router>
@@ -25,7 +26,8 @@ const Main = () => (
             <Route exact path ="/Projects/TrainGame" component={TrainGame}/>
             <Route exact path ="/Projects/Noise" component={NoisyDetector}/>
             <Route exact path ="/Photos" component={Photos}/>
-            <Route exact path ="/Contact" component={Contact}/>
+            <Route exact path ="/Music" component={Music}/>
+            <Route exact path ="/BusinessBrains" component={BusinessBrains}/>
         </Switch>
     </Router>
 )

@@ -1,0 +1,17 @@
+.music-title {
+    text-align: center;
+    color: white;
+}
+
+.soundcloud-wrapper {
+    width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.soundcloud-audio {
+    margin-top: 2rem;
+}
