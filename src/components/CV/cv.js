@@ -7,6 +7,7 @@ class CV extends Component {
     render() {
         return(
             <div className="cv-wrapper">
+                <img src='../BrendonWard.png' alt="Brendon Ward" className="about-img"/>
                 <div className="cv-title main"><h1>CV</h1></div>
                 <CardDeck style={{margin: '2rem 8vw 2rem 8vw'}}>
                     <SharedCard 

@@ -1,3 +1,9 @@
 .App {
   text-align: center;
 }
+
+/* Bootstrap button colour */
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+  background-color: crimson !important;
+  border-color: crimson !important;
+}

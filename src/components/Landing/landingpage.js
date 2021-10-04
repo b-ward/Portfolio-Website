@@ -1,23 +1,32 @@
+//Design Credit: https://www.youtube.com/watch?v=7WwtzsSHdpI
+
 import React, {Component} from 'react';
-import './landingpage.css';
+import './landingPage.css';
+import {init} from 'ityped';
 
 class Landing extends Component {
+    componentDidMount(){
+        const typing = document.querySelector('#typing')
+        init(typing, { showCursor: false, backDelay: 1500, strings: ['Developer', 'Security Consultant', 'Technology Enthusiast' ] })
+    }
+
     render() {
         return(
-            <div className="landing">
-                <div className="info-wrapper">
-                    <img src='../BrendonWard.png' alt="Brendon Ward" className="ri"/>
-                    <div className="information">
-                        <div className="title">Brendon Ward</div>
-                        <div className="sub-title">Security Consultant | Developer</div>
-                        <div className="links">
-                            <a href="https://www.linkedin.com/in/brendon-c-ward/" target="_blank" rel="noreferrer"><img src="../linkedin.png" className="link-image" alt="LinkedIn"/></a>
-                            <a href="https://github.com/b-ward" target="_blank" rel="noreferrer"><img src="../github.png" className="link-image" alt="GitHub"/></a>
-                            <a href="https://www.youtube.com/channel/UChTNiPnFbhghEbizf66WsmQ" target="_blank" rel="noreferrer"><img src="../youtube.png" className="link-image" alt="YouTube"/></a>
-                        </div>
+            <div className="intro" id="intro">
+                <div className="left">
+                    <div className="imgContainer">
+                        <img src="/BrendonWardRectangle.jpg" alt="Brendon Ward"></img>
+                    </div>
+                </div>
+                <div className="right">
+                    <div className="wrapper">
+                        <h2>G'day! My name's</h2>
+                        <h1>Brendon Ward</h1>
+                        <h3>I'm a <span><div id="typing"></div></span></h3>
                     </div>
                 </div>
             </div>
+            
         )
     }
 }

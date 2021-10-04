@@ -8,11 +8,12 @@
 }
 
 .photos-title {
+    margin-top: 56px;
     text-align: center;
-    color: white;
+    color: black;
 }
 
 .photos-subtitle {
     text-align: center;
-    color: white;
+    color: black;
 }

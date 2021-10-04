@@ -34,7 +34,7 @@ class App extends Component {
           <Toolbar drawerClickHandler={this.drawerToggleClickHandler}/>
           <SideDrawer show={this.state.sideDrawerOpen}/>
           {backdrop}
-          <div className="page-content" style={{marginTop: '56px'}}>
+          <div className="page-content">
             <Main/>
           </div>
         </Layout>

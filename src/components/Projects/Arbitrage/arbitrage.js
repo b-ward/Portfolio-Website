@@ -105,7 +105,7 @@ class Arbitrage extends Component {
 
     render() {
         return(
-            <div className="trainGame-wrapper">
+            <div className="arbitrage-wrapper">
                 <div className="row" style={{width: '100%', margin: 'auto'}}>
                     <div style={{position: "absolute", left: 20}}>
                         <Button className="made-button" variant="primary" onClick={() => this.setState({madeModalShow: true})}>

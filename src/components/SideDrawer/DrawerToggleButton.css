@@ -29,6 +29,6 @@
 .toggle-button_line {
     width: 30px;
     height: 3px;
-    background: white;
-    animation: example 1s linear infinite;
+    background: black;
+    /* animation: example 1s linear infinite; */
 }

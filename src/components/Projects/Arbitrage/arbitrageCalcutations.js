@@ -56,6 +56,8 @@ async function getOdds(sports) {
         let response = await fetch(sportsRequest);
         let oddsData = await response.text();
         oddsData = JSON.parse(oddsData)
+        setTimeout(function(){ }, 1000);
+        console.log(oddsData)
         if (response.status === 400){
             output = 'Need new API Key'
             break

@@ -1,3 +1,7 @@
+.trio-wrapper {
+  margin-top: 56px;
+}
+
 #play {
   position:absolute;
   padding-left: 20px;
@@ -6,6 +10,7 @@
   height: 700px;
   overflow-x: auto;
   overflow-y: hidden;
+  background-color: 	#006400;
 }
 #player_card_1 {
   position:absolute;
@@ -498,7 +503,7 @@
   width: 60%;
   margin: auto;
   text-align: center;
-  color: white;
+  color: black;
 }
 
 .video-container {
