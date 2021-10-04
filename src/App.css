@@ -13,9 +13,6 @@
   border-radius: 100%;
   opacity: 0.7;
   z-index: -1;
-  overflow: hidden;
-  overflow-y: hidden;
-  overflow-x: hidden;
 }
 
 .App::-webkit-scrollbar {
