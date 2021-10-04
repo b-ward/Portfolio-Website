@@ -1,5 +1,5 @@
 .intro {
-    background-color: white;
+    background-color: none;
     display: flex;
     flex-direction: row;
     height: 100vh;
@@ -42,14 +42,17 @@
 .intro .right .wrapper h1 {
     font-size: 45px;
     margin: 10px 0;
+    background-color: white;
 }
 
 .intro .right .wrapper h2 {
     font-size: 30px;
+    background-color: white;
 }
 
 .intro .right .wrapper h3 {
     font-size: 20px;
+    background-color: white;
 }
 
 .intro .right .wrapper h3 span{
