@@ -13,20 +13,21 @@
 .intro .left .imgContainer {
     position: relative;
     width: 600px;
-    height: 600px;
+    height: 100vh;
     display:block;
     margin:auto;
+    display: flex;
+    align-items: center;
 }
 
 .intro .left .imgContainer img {
-    position: absolute;
-    bottom: 50px;
-    height: 85%;
+    height: 70%;
 }
 
 .intro .right {
     display: flex;
     flex: 0.5;
+    align-items: center;
 }
 
 .intro .right .wrapper {
@@ -61,7 +62,7 @@
     display: inline-block;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
     .intro {
       flex-direction: column;
     }

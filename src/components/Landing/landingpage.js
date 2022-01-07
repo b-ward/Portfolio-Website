@@ -1,7 +1,7 @@
 //Design Credit: https://www.youtube.com/watch?v=7WwtzsSHdpI
 
 import React, {Component} from 'react';
-import './landingPage.css';
+import './landingpage.css';
 import {init} from 'ityped';
 
 class Landing extends Component {
