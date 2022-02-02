@@ -84,7 +84,7 @@ class App extends Component {
           <Toolbar drawerClickHandler={this.drawerToggleClickHandler}/>
           <SideDrawer show={this.state.sideDrawerOpen}/>
           {backdrop}
-          <span class="circle"></span>
+          {/* <span class="circle"></span> */}
           <div className="page-content">
             <Main/>
           </div>

@@ -40,6 +40,7 @@ function HelpModal(props) {
   );
 }
 
+/*Needs to be updated*/
 function MadeModal(props) {
   return (
     <Modal
@@ -1078,10 +1079,10 @@ class TrioGame extends Component {
                     show={this.state.helpModalShow}
                     onHide={() => this.setState({helpModalShow: false})}
                 />
-                <MadeModal
+                {/* <MadeModal
                     show={this.state.madeModalShow}
                     onHide={() => this.setState({madeModalShow: false})}
-                />
+                /> */}
             </div>
         )
     }
