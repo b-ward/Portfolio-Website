@@ -17,7 +17,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: -1;
 }
 
 .intro .left .imgContainer img {
@@ -43,22 +42,25 @@
 .intro .right .wrapper h1 {
     font-size: 45px;
     margin: 10px 0;
-    background-color: white;
+    background-color: #333134;
+    color:white;
 }
 
 .intro .right .wrapper h2 {
     font-size: 30px;
-    background-color: white;
+    background-color: #333134;
+    color:white;
 }
 
 .intro .right .wrapper h3 {
     font-size: 20px;
-    background-color: white;
+    background-color: #333134;
+    color:white;
 }
 
 .intro .right .wrapper h3 span{
     font-size: inherit;
-    color: crimson;
+    color: #ffc200;
     display: inline-block;
 }
 
@@ -74,21 +76,21 @@
 
     .intro .left .imgContainer {
         position: relative;
-        width: 100%;
+        width: 400px;
         height: 50vh;
-        display:flex;
-        align-items: center;
-        justify-content: center;
+        display:block;
+        margin:auto;
         margin-top: 56px;
     }
 
     .intro .left .imgContainer img {
+        position: absolute;
+        bottom: 0;
         height: 90%;   
     }
 
     .intro .right .wrapper {
         width: 100%;
         height: 50vh;
-        text-align: center;
     }
   }

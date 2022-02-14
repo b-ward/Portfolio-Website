@@ -15,7 +15,7 @@ class Landing extends Component {
             <div className="intro" id="intro">
                 <div className="left">
                     <div className="imgContainer">
-                        <img src="/BrendonWardRectangle.jpg" alt="Brendon Ward"></img>
+                        <img src="../BrendonWard.png" alt="Brendon Ward"></img>
                     </div>
                 </div>
                 <div className="right">

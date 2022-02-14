@@ -107,7 +107,7 @@ class Arbitrage extends Component {
         return(
             <div className="arbitrage-wrapper">
                 <div className="row" style={{width: '100%', margin: 'auto'}}>
-                    <div style={{position: "absolute", left: 20}}>
+                    <div style={{position: "absolute", left: 60}}>
                         <Button className="made-button" variant="primary" onClick={() => this.setState({madeModalShow: true})}>
                             Creation
                         </Button>
@@ -115,7 +115,7 @@ class Arbitrage extends Component {
                     <div style={{width: '100%'}}>
                         <div className="trainGame-title"><h1>Arbitrage Betting</h1></div>
                     </div>
-                    <div style={{position: "absolute", right: 20}}>
+                    <div style={{position: "absolute", right: 60}}>
                         <Button className="help-button" variant="primary" onClick={() => this.setState({helpModalShow: true})}>
                             Help
                         </Button>

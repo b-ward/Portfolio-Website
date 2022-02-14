@@ -1,7 +1,8 @@
 .trainGame-wrapper {
     text-align: center;
-    color:black;
+    color:#ffc200;
     margin-top: 56px;
+    height: 100vh;
 }
 
 .trainGame-title {

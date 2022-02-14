@@ -10,8 +10,10 @@ class CV extends Component {
                 <img src='../BrendonWard.png' alt="Brendon Ward" className="about-img"/>
                 <div className="cv-title main"><h1>CV</h1></div>
                 <CardDeck style={{margin: '2rem 8vw 2rem 8vw'}}>
+                    <div className="col-sm-12 col-lg-12">
+                        <h3 className="cv-title">Career Summary</h3>
+                    </div>
                     <SharedCard 
-                        cardTitle="Career Summary"
                         cardBody="I am an enthusiastic and dedicated IT professional with experience in Cyber Security and Software Development from working at EY, Aleron, Nielsen and WiseTech Global. I use my strong communication, organisational and technical skills to lead and participate in cross functional teams. I am hard-working with a passion for all things tech which stems from the completion of the Bachelor of IT Co-op Scholarship at the University of Technology Sydney. I believe that the skills and experience I possess would make me an asset to your organisation."
                     />
                     <div className="col-sm-12 col-lg-12">

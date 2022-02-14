@@ -1,10 +1,11 @@
 .projects-wrapper {
     text-align: center;
     margin-top: 56px;
+    height: 100vh;
 }
 
 .projects-title {
-    color:black;
+    color:#ffc200;
     padding-bottom: 2vh;
 }
 

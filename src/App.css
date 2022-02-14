@@ -2,10 +2,14 @@
   text-align: center;
 }
 
+.page-content {
+  background-color: #333134;
+}
+
 /* Bootstrap button colour */
 .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
-  background-color: crimson !important;
-  border-color: crimson !important;
+  background-color: #ffc200 !important;
+  border-color: #ffc200 !important;
 }
 
 .ball {
@@ -19,7 +23,7 @@
   display: none;
 }
 
-.circle {
+/* .circle {
   height: 80vh;
   width: 80vh;
   background-color: crimson;
@@ -28,4 +32,4 @@
   bottom: -20vh;
   right: -20vh;
   position: fixed;
-}
+} */
