@@ -9,7 +9,7 @@ class Projects extends Component {
                 <div className="projects-title"><h1>Personal Projects</h1></div>
                 <CardDeck style={{margin: '2rem 5rem 2rem 5rem'}}>
                     <div className="col-sm-6 col-lg-3 py-2">
-                        <Card className="project-card" style={{minWidth: '200px'}}>
+                        <Card className="project-card" style={{minWidth: '200px', maxWidth: '300px'}}>
                             <a href = "/Projects/TrainGame">
                                 <Card.Img variant="top" src="../train_numbers.jpg" style={{height: '150px'}} />
                                 <Card.Body>
@@ -22,7 +22,7 @@ class Projects extends Component {
                         </Card>
                     </div>
                     <div className="col-sm-6 col-lg-3 py-2">
-                        <Card className="project-card" style={{minWidth: '200px'}}>
+                        <Card className="project-card" style={{minWidth: '200px', maxWidth: '300px'}}>
                             <a href = "/Projects/Arbitrage" >
                                 <Card.Img variant="top" src="../arbitrage.jpg" style={{height: '150px'}} />
                                 <Card.Body>
@@ -74,7 +74,7 @@ class Projects extends Component {
                         </Card>
                     </div> */}
                     <div className="col-sm-6 col-lg-3 py-2">
-                        <Card className="project-card" style={{minWidth: '200px'}}>
+                        <Card className="project-card" style={{minWidth: '200px', maxWidth: '300px'}}>
                             <a href = "/Projects/TrioGame" >
                                 <Card.Img variant="top" src="../card-games.jpg" style={{height: '150px'}}/>
                                 <Card.Body>

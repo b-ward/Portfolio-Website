@@ -79,7 +79,7 @@ class App extends Component {
       backdrop=<Backdrop click={this.backdropClickHandler}/>;
     }
     return (
-      <div style={{height:"100%"}}>
+      <div className="app-background">
         <Layout>
           <Toolbar drawerClickHandler={this.drawerToggleClickHandler}/>
           <SideDrawer show={this.state.sideDrawerOpen}/>
