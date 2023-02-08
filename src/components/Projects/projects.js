@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Card, CardDeck } from 'react-bootstrap';
+import { Card, CardGroup } from 'react-bootstrap';
 import './projects.css';
 
 class Projects extends Component {
@@ -7,7 +7,7 @@ class Projects extends Component {
         return(
             <div className="projects-wrapper">
                 <div className="projects-title"><h1>Personal Projects</h1></div>
-                <CardDeck style={{margin: '2rem 5rem 2rem 5rem'}}>
+                <CardGroup style={{margin: '2rem 5rem 2rem 5rem'}}>
                     <div className="col-sm-6 col-lg-3 py-2">
                         <Card className="project-card" style={{minWidth: '200px', maxWidth: '300px'}}>
                             <a href = "/Projects/TrainGame">
@@ -86,7 +86,7 @@ class Projects extends Component {
                             </a>
                         </Card>
                     </div>
-                </CardDeck>
+                </CardGroup>
             </div>
         )
     }

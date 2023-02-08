@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './about.css';
-import { CardDeck } from 'react-bootstrap';
+import { CardGroup } from 'react-bootstrap';
 import SharedCard from '../Shared/card';
 
 class About extends Component {
@@ -8,7 +8,7 @@ class About extends Component {
         return(
             <div className="about">
                 <img src='../BrendonWard.png' alt="Brendon Ward" className="about-img"/>
-                <CardDeck style={{margin: '2rem 8vw 2rem 8vw'}}>
+                <CardGroup style={{margin: '2rem 8vw 2rem 8vw'}}>
                     <SharedCard 
                         cardTitle="About Me"
                         cardBody="Hi! I'm Brendon. I'm a consultant based in Sydney, Australia and have a passion for IT and all things in between. I've built this site to show off some of my personal projects I've worked on, photography and videography I've captured and highlight my experience in an online CV. Feel free to reach out through my contact details below!"
@@ -28,7 +28,7 @@ class About extends Component {
                         I also utilised this tutorial to design and implement the side drawer you'll find on every page: <a href="https://www.youtube.com/watch?v=l6nmysZKHFU">https://www.youtube.com/watch?v=l6nmysZKHFU</a>. Other than that I've tried to develop everything myself (with some help from stack overflow - as all developers do). You can check out my GitHub repo for the website here: <a href="https://github.com/b-ward/Portfolio-Website">https://github.com/b-ward/Portfolio-Website</a>
                         </div>}
                     />
-                </CardDeck>
+                </CardGroup>
             </div>
         )
     }

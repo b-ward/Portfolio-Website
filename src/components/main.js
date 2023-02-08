@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Landing from './Landing/landingpage';
 import About from './About/about';
 import CV from './CV/cv';
@@ -14,22 +14,22 @@ import Music from './Music/music';
 import BusinessBrains from './BusinessBrains/businessBrains';
 
 const Main = () => (
-    <Router>
-        <Switch>
-            <Route exact path ="/" component={Landing}/>
-            <Route exact path ="/About" component={About}/>
-            <Route exact path ="/CV" component={CV}/>
-            <Route exact path ="/Projects" component={Projects}/>
-            <Route exact path ="/Projects/Arbitrage" component={Arbitrage}/>
-            <Route exact path ="/Projects/Trio" component={TrioHome}/>
-            <Route exact path ="/Projects/TrioGame" component={TrioGame}/>
-            <Route exact path ="/Projects/TrainGame" component={TrainGame}/>
-            <Route exact path ="/Projects/Noise" component={NoisyDetector}/>
-            <Route exact path ="/Photos" component={Photos}/>
-            <Route exact path ="/Music" component={Music}/>
-            <Route exact path ="/BusinessBrains" component={BusinessBrains}/>
-        </Switch>
-    </Router>
+    <BrowserRouter>
+        <Routes>
+            <Route path="/" exact element={<Landing/>}/>
+            <Route path="/About" exact element={<About/>}/>
+            <Route path="/CV" exact element={<CV/>}/>
+            <Route path="/Projects" exact element={<Projects/>}/>
+            <Route path="/Projects/Arbitrage" exact element={<Arbitrage/>}/>
+            <Route path="/Projects/Trio" exact element={<TrioHome/>}/>
+            <Route path="/Projects/TrioGame" exact element={<TrioGame/>}/>
+            <Route path="/Projects/TrainGame" exact element={<TrainGame/>}/>
+            <Route path="/Projects/Noise" exact element={<NoisyDetector/>}/>
+            <Route path="/Photos" exact element={<Photos/>}/>
+            <Route path="/Music" exact element={<Music/>}/>
+            <Route path="/BusinessBrains" exact element={<BusinessBrains/>}/>
+        </Routes>
+    </BrowserRouter>
 )
 
 export default Main;

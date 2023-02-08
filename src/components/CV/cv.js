@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { CardDeck } from 'react-bootstrap';
+import { CardGroup } from 'react-bootstrap';
 import './cv.css';
 import SharedCard from '../Shared/card';
 
@@ -9,7 +9,7 @@ class CV extends Component {
             <div className="cv-wrapper">
                 <img src='../BrendonWard.png' alt="Brendon Ward" className="about-img"/>
                 <div className="cv-title main"><h1>CV</h1></div>
-                <CardDeck style={{margin: '2rem 8vw 2rem 8vw'}}>
+                <CardGroup style={{margin: '2rem 8vw 2rem 8vw'}}>
                     <div className="col-sm-12 col-lg-12">
                         <h3 className="cv-title">Career Summary</h3>
                     </div>
@@ -75,7 +75,7 @@ class CV extends Component {
                         cardTitle="Chatswood High School | 2011 - 2016 | 97.40 ATAR"
                         cardBody="Throughout my time at Chatswood High School I participated in many extracurricular activities including: Duke of Edinburgh, Band, SRC and High Resolves. During Year 12, I also received high achievers awards for Mathematics and Physics, and Dux of Software Design and Development."
                     />
-                </CardDeck>
+                </CardGroup>
             </div>
         )
     }
