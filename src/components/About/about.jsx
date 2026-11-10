@@ -14,7 +14,7 @@ export default function About() {
       <p>Finding Netlify gave me a straightforward way to host it. I set up a GitHub repository and a React project, then started putting this little corner of the internet together.</p>
       <p>The original design took inspiration from <a href="https://www.youtube.com/watch?v=n8iA18R76jk">this portfolio tutorial</a>, with the original navigation based on <a href="https://www.youtube.com/watch?v=l6nmysZKHFU">this side-drawer tutorial</a>. I've enjoyed working through the rest myself, with some help along the way.</p>
       <p>I’ve since revamped the site with the help of AI to improve the user experience, simplify navigation, and give the layouts and components a more consistent feel. It runs on React, Vite and Tailwind CSS, and is hosted on Netlify.</p>
-      <a className="text-link" href="https://github.com/b-ward/Portfolio-Website-2024">View the source on GitHub ↗</a>
+      <a className="text-link" href="https://github.com/b-ward/Portfolio-Website">View the source on GitHub ↗</a>
     </div></section>
   </div>;
 }
