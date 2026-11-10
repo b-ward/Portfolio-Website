@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { Link } from 'react-router-dom';
 import Modal from "../../Shared/Modal";
 
 // ==========================
@@ -130,6 +131,7 @@ export default function FiveHundredScorer() {
 
   return (
     <div className="min-h-screen bg-surface text-black p-5 max-w-[1100px] mx-auto sm:p-5 [padding:16px_12px_calc(20px+env(safe-area-inset-bottom))_12px] sm:[padding:20px]">
+      <Link className="back-link" to="/Projects">← All projects</Link>
       <Header onShowRules={() => setShowRules(true)} />
 
       {/* Scores */}

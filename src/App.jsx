@@ -1,34 +1,15 @@
-import React, { useState } from 'react';
-import { BrowserRouter } from 'react-router-dom';
-
+import { useEffect } from 'react';
+import { BrowserRouter, useLocation } from 'react-router-dom';
 import Main from './components/main';
 import Toolbar from './components/Toolbar/Toolbar';
-import SideDrawer from './components/SideDrawer/SideDrawer';
-import Backdrop from './components/Backdrop/Backdrop';
-
-const App = () => {
-  const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
-
-  const drawerToggleClickHandler = () => {
-    setSideDrawerOpen(prev => !prev);
-  };
-
-  const backdropClickHandler = () => {
-    setSideDrawerOpen(false);
-  };
-
-  return (
-    <BrowserRouter>
-      <div className="min-h-screen bg-surface">
-        <Toolbar drawerClickHandler={drawerToggleClickHandler} />
-        <SideDrawer show={sideDrawerOpen} closeDrawer={backdropClickHandler} />
-        {sideDrawerOpen && <Backdrop click={backdropClickHandler} />}
-        <main className="w-full pt-14">
-          <Main />
-        </main>
-      </div>
-    </BrowserRouter>
-  );
-};
-
-export default App;
+function RouteScroll() {
+  const { pathname, hash } = useLocation();
+  useEffect(() => {
+    if (hash) document.getElementById(hash.slice(1))?.scrollIntoView();
+    else window.scrollTo(0, 0);
+  }, [pathname, hash]);
+  return null;
+}
+export default function App() {
+  return <BrowserRouter><RouteScroll /><a className="skip-link" href="#main-content">Skip to content</a><Toolbar /><main id="main-content" tabIndex={-1}><Main /></main></BrowserRouter>;
+}

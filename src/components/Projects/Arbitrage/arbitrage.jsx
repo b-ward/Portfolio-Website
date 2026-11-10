@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import ProjectPage from '../../Shared/ProjectPage'
 import Modal from '../../Shared/Modal'
 import getArbitrageBets from './arbitrageCalcutations'
 
@@ -122,19 +123,15 @@ export default function Arbitrage() {
   const diagnostics = results?.diagnostics
 
   return (
-    <div className="min-h-screen p-5 text-white sm:p-3">
-      {/* Header */}
-      <div className="flex flex-col items-center gap-2 mb-5">
-        <h1 className="text-accent text-2xl font-semibold text-center m-0 sm:text-xl">Arbitrage Betting</h1>
-        <div className="flex items-center gap-2">
-          <button className="bg-transparent border border-accent/50 text-accent rounded-lg px-3.5 py-1.5 text-sm font-semibold cursor-pointer hover:bg-accent/10 hover:border-accent" onClick={() => setMadeOpen(true)}>Creation</button>
-          <button className="bg-transparent border border-accent/50 text-accent rounded-lg px-3.5 py-1.5 text-sm font-semibold cursor-pointer hover:bg-accent/10 hover:border-accent" onClick={() => setHelpOpen(true)}>Help</button>
-        </div>
-      </div>
-
+    <ProjectPage title="Arbitrage Betting" description="Compare bookmaker odds to find arbitrage and lay opportunities." actions={<>
+      <button className="button-secondary" onClick={() => setMadeOpen(true)}>Creation</button>
+      <button className="button-secondary" onClick={() => setHelpOpen(true)}>Help</button>
+    </>}>
+      <section className="tool-panel scan-panel" aria-label="Scan betting odds">
+        <div><h2>Find opportunities</h2><p>Scan the latest odds across sports and bookmakers.</p></div>
       {/* Fetch button */}
-      <div className="text-center mb-6">
-        <button className="border border-accent bg-accent text-black rounded-lg px-5 py-2.5 text-base font-bold cursor-pointer disabled:opacity-65 disabled:cursor-not-allowed" onClick={handleFetch} disabled={loading}>
+      <div className="scan-action">
+        <button className="button-primary" onClick={handleFetch} disabled={loading}>
           {loading ? (
             <span className="inline-flex items-center gap-2">
               <span className="w-3.5 h-3.5 rounded-full border-2 border-black/35 border-t-black animate-spin" aria-hidden="true" />
@@ -150,6 +147,8 @@ export default function Arbitrage() {
           </p>
         )}
       </div>
+
+      </section>
 
       {error && <p className="text-red-400 bg-red-400/10 border border-red-400/35 rounded-lg px-4 py-3 mb-4">{error}</p>}
 
@@ -272,6 +271,6 @@ export default function Arbitrage() {
           </p>
         </Modal>
       )}
-    </div>
+    </ProjectPage>
   )
 }

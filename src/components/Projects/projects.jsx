@@ -1,30 +1,77 @@
-import React from 'react';
+import { Link } from 'react-router-dom';
 import ProjectCard from './ProjectCard';
 
+// Display order is intentional: established tools, newer web apps, then older experiments.
 const PROJECTS = [
-  { src: '/train_numbers.jpg', title: 'Train Game',            description: 'A program that takes four digits and uses different operations to make ten.',                        route: '/Projects/TrainGame' },
-  { src: '/arbitrage.jpg',     title: 'Arbitrage Betting',     description: 'A program that aggregates betting odds from different sites to find profitable arbitrage bets.',     route: '/Projects/Arbitrage' },
-  { src: '/card-games.jpg',    title: 'Trio',                  description: 'A virtual version of the card game Trio',                                                            route: '/Projects/TrioGame' },
-  { src: '/runner.jpg',        title: 'Pace Calculator',       description: 'Calculate your running pace as you go',                                                              route: '/Projects/PaceCalculator' },
-  { src: '/500.jpg',           title: '500 Scorer',            description: 'A scoring assistant for the 500 card game',                                                          route: '/Projects/FiveHundred' },
-  { src: '/nba.png',           title: 'NBA Ladder',            description: 'Live NBA standings using the Sportradar API',                                                        route: '/Projects/NBA-Ladder' },
-  { src: '/pin.png',           title: 'Top Artists World Map',        description: 'Spotify top artists visualized by origin country on an interactive world map.',                      route: '/Projects/TopArtistsMap' },
-  { src: '/pl-predictions.png', title: 'PL Predictions (26/27)',       description: 'Submit your Premier League predictions for the 2026/27 season.',                                     route: '/Projects/PLPredictions' },
-  { src: '/fpl-checker.png',   title: 'FPL Draft Checker',            description: 'See which players are still available in our Fantasy Premier League draft league.',                  route: '/Projects/FPLDraft' },
-  // { src: '/spotify-alexa.png', title: 'Alexa Spotify',      description: 'Use Alexa to play the most recently added songs to a playlist on Spotify.',                         route: '/Projects/AlexaSpotify' },
-  // { src: '/angry.png',         title: 'Noisy Detector',     description: 'Uses the microphone to detect when you are being too loud.',                                         route: '/Projects/Noise' },
-  // { src: '/facebook.png',      title: 'Facebook Analytics', description: 'Data analytics on Facebook messages.',                                                               route: '/Projects/Analytics' },
+  {
+    title: 'Arbitrage Betting', src: '/arbitrage.jpg', route: '/Projects/Arbitrage',
+    description: 'A program that aggregates betting odds from different sites to find profitable arbitrage bets.',
+  },
+  {
+    title: '500 Scorer', src: '/500.jpg', route: '/Projects/FiveHundred',
+    description: 'A scoring assistant for the 500 card game.',
+  },
+  {
+    title: 'FoodieMap', src: '/projects/foodiemap-photo.jpg', href: 'https://foodiemap.ai.studio/',
+    description: 'Save restaurants you’ve visited or want to try, filter by cuisine, and add notes. Built with Google Maps and Places.',
+  },
+  {
+    title: 'Goal Tally', src: '/projects/goal-tally-photo.jpg', href: 'https://goal-tally.netlify.app/',
+    description: 'Set a goal, log your progress one tally at a time, and look back through your history.',
+  },
+  {
+    title: 'FPL Draft Checker', src: '/projects/fpl-draft-photo.jpg', href: 'https://fpl-draft-mocha.vercel.app/',
+    description: 'Check which players are still available in your Fantasy Premier League draft league.',
+  },
+  {
+    title: 'MVP Tally', src: '/projects/mvp-tally-photo.jpg', href: 'https://mvp-tally.netlify.app/',
+    description: 'Built for my mum’s football team: collect match MVP votes and track weekly results to find the season’s overall MVP.',
+  },
+  {
+    title: 'Matchday', src: '/projects/matchday-photo.jpg', href: 'https://matchday.magnetichome.chatgpt.site/',
+    description: 'Fixtures, league standings, and team form for my local seven-a-side competition, filtered to your chosen team.',
+  },
+  {
+    title: 'Yonder Rewards', src: '/projects/yonder-rewards.jpg', href: 'https://b-ward.github.io/yonder-rewards/',
+    description: 'Compare Yonder restaurant rewards by points per pound to find the best value, using data from my tracking spreadsheet.',
+  },
+  {
+    title: 'Playlist Slicer', src: '/projects/playlist-slicer-photo.jpg', href: 'https://playlist-slicer.ai.studio/',
+    description: 'Connect to Spotify and split a long playlist into smaller playlists with a chosen number of songs.',
+  },
+  {
+    title: 'Train Game', src: '/train_numbers.jpg', route: '/Projects/TrainGame',
+    description: 'A program that takes four digits and uses different operations to make ten.',
+  },
+  {
+    title: 'Pace Calculator', src: '/runner.jpg', route: '/Projects/PaceCalculator',
+    description: 'Calculate your running pace from a distance and finish time.',
+  },
+  {
+    title: 'Spotify Map', src: '/spotify-map.png', route: '/Projects/TopArtistsMap',
+    description: 'Spotify top artists visualized by origin country on an interactive world map.',
+  },
+  {
+    title: 'Trio', src: '/card-games.jpg', route: '/Projects/TrioGame',
+    description: 'A virtual version of the card game Trio.',
+  },
+  {
+    title: 'PL Predictions (26/27)', src: '/pl-predictions.png', route: '/Projects/PLPredictions',
+    description: 'Submit your Premier League predictions for the 2026/27 season.',
+  },
 ];
-
-const Projects = () => (
-  <div className="py-8 px-4 sm:px-8 lg:px-20">
-    <h1 className="text-accent text-center mb-6">Personal Projects</h1>
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-      {PROJECTS.map((card) => (
-        <ProjectCard key={card.route} {...card} />
-      ))}
-    </div>
-  </div>
-);
-
-export default Projects;
+const extras = [
+  { title: 'Photos & Videos', route: '/Projects/Photos', description: 'A few places I’ve been, captured on film.' },
+  { title: 'Music', route: '/Projects/Music', description: 'House, tech house and mixes I’ve put together.' },
+  { title: 'Business Brains', route: '/Projects/BusinessBrains', description: 'Interviews with current and former business owners about their experiences.' },
+];
+export default function Projects() {
+  return <div className="page-container">
+    <header className="page-heading"><h1>Personal projects</h1><p>Games, useful little tools, and ideas I wanted to try.</p></header>
+    <div className="project-grid">{PROJECTS.map(card => <ProjectCard key={card.href || card.route} {...card} />)}</div>
+    <section className="elsewhere" aria-labelledby="elsewhere-title">
+      <div className="section-heading"><h2 id="elsewhere-title">Away from the code</h2><p>A few other things I enjoy making.</p></div>
+      <div className="extra-grid">{extras.map(item => <Link key={item.route} to={item.route} className="extra-card"><h3>{item.title} <span aria-hidden="true">↗</span></h3><p>{item.description}</p></Link>)}</div>
+    </section>
+  </div>;
+}
