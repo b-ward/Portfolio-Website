@@ -1,11 +1,10 @@
 #play {
-  position:absolute;
+  position:relative;
   padding-left: 20px;
   padding-top: 20px;
-  width: 100%;
+  width: 1300px;
   height: 700px;
-  overflow-x: auto;
-  overflow-y: hidden;
+  overflow: hidden;
   background-color: 	#006400;
 }
 #player_card_1 {

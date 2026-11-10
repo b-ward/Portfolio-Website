@@ -1,42 +1,30 @@
-//Design Credit: https://www.youtube.com/watch?v=7WwtzsSHdpI
-
-import React, { useRef, useEffect } from 'react';
-import { init } from 'ityped';
-
-const Landing = () => {
-  const typingRef = useRef(null);
-
+import { useEffect, useState } from 'react';
+import SocialLinks from '../Shared/SocialLinks';
+const roles = ['Product Manager', 'Tester', 'Developer', 'Technology Enthusiast'];
+function TypedRole() {
+  const [text, setText] = useState(roles[0]);
   useEffect(() => {
-    if (!typingRef.current) return;
-    init(typingRef.current, {
-      showCursor: false,
-      backDelay: 1500,
-      strings: ['Product Manager', 'Tester', 'Developer', 'Technology Enthusiast'],
-    });
+    const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let timer, role = 0, length = roles[0].length, deleting = true;
+    function tick() {
+      length += deleting ? -1 : 1;
+      setText(roles[role].slice(0, length));
+      let delay = deleting ? 45 : 90;
+      if (length === 0) { role = (role + 1) % roles.length; deleting = false; delay = 250; }
+      else if (length === roles[role].length) { deleting = true; delay = 1500; }
+      timer = window.setTimeout(tick, delay);
+    }
+    function sync() {
+      window.clearTimeout(timer);
+      if (preference.matches) setText(roles[0]);
+      else timer = window.setTimeout(tick, 1500);
+    }
+    sync();
+    preference.addEventListener('change', sync);
+    return () => { window.clearTimeout(timer); preference.removeEventListener('change', sync); };
   }, []);
-
-  return (
-    <div className="flex flex-col lg:flex-row h-[calc(100vh-3.5rem)] overflow-hidden">
-      <div className="flex-1 overflow-hidden">
-        <div className="relative w-full h-full flex items-center justify-center">
-          <img
-            src="/BrendonWard.png"
-            alt="Brendon Ward"
-            className="absolute bottom-0 h-[80%] lg:static lg:h-[70%]"
-          />
-        </div>
-      </div>
-      <div className="flex-1 flex items-center justify-center lg:justify-start">
-        <div className="w-full max-w-[600px] h-[50vh] lg:h-[600px] lg:pl-[50px] lg:pr-5 flex flex-col justify-center items-center lg:items-start">
-          <h2 className="bg-surface text-white text-[30px]">G'day! My name's</h2>
-          <h1 className="bg-surface text-white text-[45px] whitespace-nowrap my-[10px]">Brendon Ward</h1>
-          <h3 className="bg-surface text-white text-[20px]">
-            I'm a <span ref={typingRef} className="text-accent inline-block"></span>
-          </h3>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default Landing;
+  return <><span className="sr-only">Product Manager, Tester, Developer and Technology Enthusiast</span><span aria-hidden="true">I'm a <span className="role-text">{text}</span></span></>;
+}
+export default function Landing() {
+  return <section className="landing" aria-label="Welcome"><div className="landing-portrait"><img src="/BrendonWard.png" alt="Brendon Ward" /></div><div className="landing-copy"><p className="landing-greeting">G'day! My name's</p><h1>Brendon Ward</h1><p className="landing-role"><TypedRole /></p><SocialLinks /></div></section>;
+}

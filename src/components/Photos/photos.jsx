@@ -1,40 +1,11 @@
-import React from 'react';
-
-const Photos = () => (
-  <div>
-    <h3 className="text-accent text-center text-2xl font-semibold mb-4">Videography</h3>
-    <p className="text-center text-white">Make sure to change the quality to 1080p/4k</p>
-    <iframe
-      className="aspect-video w-3/5 mx-auto block mb-8"
-      title="Northern Territory 2021"
-      src="https://www.youtube.com/embed/z_7wfXeZL-g?si=2c-qHQHLI3aRFfkB"
-      allow="fullscreen;"
-    ></iframe>
-    <iframe
-      className="aspect-video w-3/5 mx-auto block mb-8"
-      title="Northern Territory 2021"
-      src="https://www.youtube.com/embed/0yzM_pxB0qY"
-      allow="fullscreen;"
-    ></iframe>
-    <iframe
-      className="aspect-video w-3/5 mx-auto block mb-8"
-      title="Europe 19/20"
-      src="https://www.youtube.com/embed/QTkTdYfBvCk"
-      allow="fullscreen;"
-    ></iframe>
-    <iframe
-      className="aspect-video w-3/5 mx-auto block mb-8"
-      title="Europe 18/19"
-      src="https://www.youtube.com/embed/Y9x_vyCl0lg"
-      allow="fullscreen;"
-    ></iframe>
-    <iframe
-      className="aspect-video w-3/5 mx-auto block mb-8"
-      title="South-East Asia 17/18"
-      src="https://www.youtube.com/embed/p_jTXvdzkHM"
-      allow="fullscreen;"
-    ></iframe>
-  </div>
-);
-
-export default Photos;
+import MediaPage from '../Shared/MediaPage';
+const videos = [
+  { id: 'z_7wfXeZL-g', title: 'Egypt & Jordan 2022/23', query: '?si=2c-qHQHLI3aRFfkB' },
+  { id: '0yzM_pxB0qY', title: 'Northern Territory 2021' },
+  { id: 'QTkTdYfBvCk', title: 'Europe 19/20' },
+  { id: 'Y9x_vyCl0lg', title: 'Europe 18/19' },
+  { id: 'p_jTXvdzkHM', title: 'South-East Asia 17/18' },
+];
+export default function Photos() {
+  return <MediaPage title="Photos & Videos" description="Some places are worth bringing a camera along for. A few travel films from over the years."><div className="video-list">{videos.map(({ id, title, query = '' }) => <figure key={id}><figcaption><h2>{title}</h2></figcaption><iframe className="video-frame" loading="lazy" title={title} src={`https://www.youtube.com/embed/${id}${query}`} referrerPolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowFullScreen /></figure>)}</div></MediaPage>;
+}

@@ -1,8 +1,7 @@
 import React from 'react';
-import {Routes, Route} from 'react-router-dom';
+import {Routes, Route, Navigate} from 'react-router-dom';
 import Landing from './Landing/landingpage';
 import About from './About/about';
-import CV from './CV/cv';
 import Projects from './Projects/projects';
 import TrainGame from './Projects/TrainGame/trainGame';
 import PaceCalculator from './Projects/PaceCalculator/paceCalculator';
@@ -24,7 +23,7 @@ const Main = () => (
     <Routes>
         <Route path="/" element={<Landing/>}/>
         <Route path="/About" element={<About/>}/>
-        <Route path="/CV" element={<CV/>}/>
+        <Route path="/CV" element={<Navigate to="/About#cv" replace />}/>
         <Route path="/Projects" element={<Projects/>}/>
         <Route path="/Projects/Arbitrage" element={<Arbitrage/>}/>
         <Route path="/Projects/Trio" element={<TrioHome/>}/>
@@ -37,9 +36,12 @@ const Main = () => (
         <Route path="/Projects/TopArtistsMap" element={<TopArtistsMap/>}/>
         <Route path="/Projects/PLPredictions" element={<PLPredictions/>}/>
         <Route path="/Projects/FPLDraft" element={<FPLDraftChecker/>}/>
-        <Route path="/Photos" element={<Photos/>}/>
-        <Route path="/Music" element={<Music/>}/>
-        <Route path="/BusinessBrains" element={<BusinessBrains/>}/>
+        <Route path="/Projects/Photos" element={<Photos/>}/>
+        <Route path="/Photos" element={<Navigate to="/Projects/Photos" replace />}/>
+        <Route path="/Projects/Music" element={<Music/>}/>
+        <Route path="/Music" element={<Navigate to="/Projects/Music" replace />}/>
+        <Route path="/Projects/BusinessBrains" element={<BusinessBrains/>}/>
+        <Route path="/BusinessBrains" element={<Navigate to="/Projects/BusinessBrains" replace />}/>
     </Routes>
 )
 

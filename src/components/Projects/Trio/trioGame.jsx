@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './trioGame.css';
+import ProjectPage from '../../Shared/ProjectPage';
 import Modal from '../../Shared/Modal';
 
 function HelpModal({ show, onHide }) {
@@ -973,18 +974,12 @@ class TrioGame extends Component {
 
     render() {
         return(
-            <div className="text-center min-h-screen">
-              <div className="relative z-10 flex items-center justify-between w-full px-5">
-                    <div className="text-accent text-2xl font-semibold py-3"><h1>Trio</h1></div>
-                    <div className="flex gap-2">
-                        <button className="bg-accent text-black font-semibold px-4 py-2 rounded cursor-pointer" onClick={() => this.setState({madeModalShow: true})}>
-                            Creation
-                        </button>
-                        <button className="bg-accent text-black font-semibold px-4 py-2 rounded cursor-pointer" onClick={() => this.setState({helpModalShow: true})}>
-                            Help
-                        </button>
-                    </div>
-                </div>
+            <ProjectPage title="Trio" className="trio-page" description="My Year 12 Software Design and Development major work, preserved in its original style." actions={<>
+              <button className="button-secondary" onClick={() => this.setState({madeModalShow: true})}>Creation</button>
+              <button className="button-secondary" onClick={() => this.setState({helpModalShow: true})}>Help</button>
+            </>}>
+                <p className="field-hint trio-scroll-hint">Scroll horizontally to explore the full game board.</p>
+                <div className="trio-viewport" tabIndex={0} role="region" aria-label="Original Trio game board, scroll horizontally">
                 <div id = 'play'>
                   <p id = 'p1' className="trio-button" onClick = {() => this.play_initialise()}>PLAY TRIOS</p>
                   <p id = 'p2' className="trio-button" onClick = {() => this.discard_initialise()}>DISCARD</p>
@@ -1055,6 +1050,7 @@ class TrioGame extends Component {
                   <img id = 'pile' className="trio-button" alt='Card' src = '../Trio/Images/blank.png' onClick = {() => this.pick_up_pile()}/>
                   <img id = 'deck' className="trio-button" alt='Card' src = '../Trio/Images/card_back.png' onClick = {() => this.pick_up_deck()}/>
                 </div>
+                </div>
                 <HelpModal
                     show={this.state.helpModalShow}
                     onHide={() => this.setState({helpModalShow: false})}
@@ -1063,7 +1059,7 @@ class TrioGame extends Component {
                     show={this.state.madeModalShow}
                     onHide={() => this.setState({madeModalShow: false})}
                 />
-            </div>
+            </ProjectPage>
         )
     }
 }

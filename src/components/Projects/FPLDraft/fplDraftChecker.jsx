@@ -1,6 +1,6 @@
 import React from 'react';
 
-const FPL_URL = 'https://script.google.com/macros/s/AKfycbyn0B2IQZYYdWKZGHzDXhDdzkH_beWK1e8LebSTjTZzv_iBBQWFaN97Xi8c6e7zia3DtA/exec?league=1422966';
+const FPL_URL = 'https://fpl-draft-mocha.vercel.app/';
 
 const FPLDraftChecker = () => (
   <div className="flex flex-col" style={{ height: 'calc(100vh - 56px)' }}>

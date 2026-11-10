@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import getSolutions from './trainGameCalculations';
+import ProjectPage from '../../Shared/ProjectPage';
 import Modal from '../../Shared/Modal';
 
 const TrainGame = () => {
@@ -34,43 +35,19 @@ const TrainGame = () => {
   }
 
   return (
-    <div className="text-center text-accent min-h-screen">
-      <div className="px-4 py-3">
-        <div className="pb-2"><h1>Train Game</h1></div>
-        <div className="flex justify-center gap-3">
-          <button
-            onClick={() => setMadeModalShow(true)}
-            className="bg-accent text-black font-semibold px-4 py-2 rounded"
-          >
-            Creation
-          </button>
-          <button
-            onClick={() => setHelpModalShow(true)}
-            className="bg-accent text-black font-semibold px-4 py-2 rounded"
-          >
-            Help
-          </button>
-        </div>
-      </div>
-
-      <div className="flex items-center justify-center gap-2">
-        <input
-          name="number"
-          type="text"
-          value={number}
-          onChange={onInputChange}
-          className="border border-accent/50 bg-transparent text-white rounded px-3 py-2 text-center"
-        />
-        <button
-          onClick={() => validateAndSubmit(number)}
-          className="bg-accent text-black font-semibold px-4 py-2 rounded"
-        >
-          Submit
-        </button>
-      </div>
-
-      <div className="pt-2 text-red-500">{error}</div>
-      <div className="pt-2 pb-40">{solutions}</div>
+    <ProjectPage title="Train Game" description="Use four digits to make ten." actions={<>
+      <button className="button-secondary" onClick={() => setMadeModalShow(true)}>Creation</button>
+      <button className="button-secondary" onClick={() => setHelpModalShow(true)}>Help</button>
+    </>}>
+      <section className="tool-panel train-panel">
+        <form onSubmit={event => { event.preventDefault(); validateAndSubmit(number); }}>
+          <label htmlFor="train-number">Carriage number</label>
+          <p id="train-hint" className="field-hint">Enter the four digits from a train carriage, or try 2384.</p>
+          <div className="train-input-row"><input id="train-number" name="number" type="text" inputMode="numeric" maxLength={4} value={number} onChange={onInputChange} placeholder="e.g. 2384" aria-describedby="train-hint train-error" aria-invalid={Boolean(error)} /><button type="submit" className="button-primary">Find solutions</button></div>
+          <p id="train-error" className="form-error" role="alert">{error}</p>
+        </form>
+        <div className="train-results" aria-live="polite">{solutions}</div>
+      </section>
 
       {helpModalShow && (
         <Modal title="Help" onClose={() => setHelpModalShow(false)}>
@@ -123,7 +100,7 @@ const TrainGame = () => {
           </p>
         </Modal>
       )}
-    </div>
+    </ProjectPage>
   );
 };
 
