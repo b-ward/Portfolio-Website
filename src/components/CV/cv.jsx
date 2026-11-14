@@ -1,14 +1,21 @@
 import React from 'react';
-function ExperienceEntry({ cardTitle, cardBody, imageSrc }) {
-  const [organisation, role, ...details] = (cardTitle || '').split(' | ');
-  const dateAsRole = /\d{4}/.test(role || '') && !details.some(item => /\d{4}/.test(item));
-  const heading = dateAsRole ? organisation : (role || organisation);
-  const metadata = dateAsRole ? [role, ...details].join(' · ') : details.join(' · ');
+function ExperienceEntry({ cardTitle, cardBody, imageSrc, listLabel }) {
+  const [organisation, ...details] = (cardTitle || '').split(' | ');
+  const dateIndex = details.findIndex(item => /\d{4}/.test(item));
+  const dateAsRole = dateIndex === 0;
+  const role = details.slice(0, dateIndex === -1 ? 1 : dateIndex).join(' | ');
+  const heading = role || organisation;
+  const metadata = details.slice(dateIndex === -1 ? 1 : dateIndex).join(' · ');
   const bullets = Array.isArray(cardBody) ? cardBody.filter(item => typeof item === 'string') : null;
   return <article className="experience-entry">
     {imageSrc && <img src={imageSrc} alt="" loading="lazy" />}
     <div>{cardTitle && <header><>{!dateAsRole && <p className="entry-organisation">{organisation}</p>}<h3>{heading}</h3><p className="entry-date">{metadata}</p></></header>}
-      {bullets ? <ul>{bullets.map(item => <li key={item}>{item.replace(/^- /, '')}</li>)}</ul> : <p>{cardBody}</p>}
+      {bullets ? (
+        <>
+          {listLabel && <p>{listLabel}</p>}
+          <ul>{bullets.map(item => <li key={item}>{item.replace(/^- /, '')}</li>)}</ul>
+        </>
+      ) : cardBody && <p>{cardBody}</p>}
     </div>
   </article>;
 }
@@ -21,13 +28,27 @@ const CV = () => (
       />
       <h2 className="cv-section-title">Experience</h2>
       <ExperienceEntry
+        imageSrc="/CV/mastercard.svg"
+        cardTitle="Mastercard | Senior Specialist | Product Management | June 2026 - Present"
+        cardBody={[
+          "Help shape how customers discover and integrate APIs through Mastercard Developers. The platform supports 5+ billion API calls per month and gives customers the tools to set up projects, obtain credentials and move from sandbox testing to launch.",
+          "Clarify customer problems, gather and refine requirements, and manage feature requests. Work with Product and Engineering to weigh trade-offs, prioritise work and resolve delivery dependencies.",
+          "Led the creation of the 2027 platform roadmap with Product and Engineering, aligning priorities, timelines and dependencies.",
+          "Led the migration of legacy tutorials across nearly 300 repositories. Used AI to generate Python scripts and build Azure DevOps automation that opened around 600 pull requests. The migration took two months, compared with an estimate of 12 months of manual work.",
+          "Managed feedback for the platform’s AI Assistant, which uses retrieval-augmented generation (RAG) to answer questions using developer documentation. Partnered with Engineering to resolve issues and improve prompts and backend behaviour.",
+        ]}
+      />
+      <ExperienceEntry
         imageSrc="/CV/WTG.jpg"
-        cardTitle="WiseTech Global | Product Specialist | April 2022 - Present"
-        cardBody={["- Product lead for MDM CORE sub-team that specialises in Master Data Management, Address Validation (>1 million requests per month), Credit Reports (100 users/month) and Organisation Automation product suite for CargoWise One.", <br key="1"/>,
-        "- Working closely with the Product Manager to develop team roadmap and goals.", <br key="2"/>,
-        "- Developed ongoing relationships with CargoWise customers to identify industry problems and gaps in current solutions. ", <br key="3"/>,
-        "- Responsible for the development and mentoring of new team members. Teaching skills in product design, usability testing and communication with customers. Selected and participated in Mentoring Program.", <br key="4"/>,
-        "- Actioning technical customer service incidents, including defects, feature requests, quotations and training questions."]}
+        cardTitle="WiseTech Global | Product Specialist | April 2022 - June 2026"
+        listLabel="Key responsibilities"
+        cardBody={[
+          "Strategic Roadmap & Vision: Defined and executed the product roadmap and vision for the Master Data Management (MDM) team, specializing in Address Validation, Organisation Automation and Credit Reporting for the CargoWise One suite.",
+          "Technical Skills: Led the design and implementation of multiple containerised architecture migrations for an Address Validation API processing >5M monthly requests and a Credit Report tool serving 100+ power users. Also oversaw the implementation of a RAG system for address matching and a NER system for address parsing.",
+          "Data-Informed Decision Making: Utilized SQL, Kibana, and Power BI to analyze user behavior and system performance, translating data insights into actionable feature sets.",
+          "Stakeholder Alignment & Customer Success: Optimized the product lifecycle by aligning stakeholder interests with customer needs. Streamlined the management of technical incidents, feature requests, and quotations to ensure high-quality delivery.",
+          "Leadership & Mentorship: Scaled team capabilities by mentoring new hires in product design, usability testing, and stakeholder communication; successfully completed a formal Mentoring Program.",
+        ]}
       />
       <ExperienceEntry
         imageSrc="/CV/EY.png"
@@ -52,16 +73,6 @@ const CV = () => (
         imageSrc="/CV/wisetech.png"
         cardTitle="WiseTech Global | Associate Developer | Jul 2017 - Dec 2017"
         cardBody="Rotated through multiple teams developing code for the main software product, CargoWise One. Development work included C# and SQL."
-      />
-      <ExperienceEntry
-        imageSrc="/CV/uts.png"
-        cardTitle="UTS | Student Promotions Representative | Jun 2017 - Jul 2019"
-        cardBody="Involved assisting at UTS events by performing administrative activities, building tours, registration and providing information on different courses. Some of the main events I helped with were UTS Open Day, UTS Info Day and the FEIT Capstone Showcase."
-      />
-      <ExperienceEntry
-        imageSrc="/CV/hoyts.jpg"
-        cardTitle="Hoyts | Crew Member & Host | Nov 2013 - May 2017"
-        cardBody="Involved ticket collection, cleaning, sales and ushering. Trained new starters between June 2015 and May 2017."
       />
       <h2 className="cv-section-title">Certifications</h2>
       <ExperienceEntry

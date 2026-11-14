@@ -32,10 +32,6 @@ const PROJECTS = [
     description: 'Fixtures, league standings, and team form for my local seven-a-side competition, filtered to your chosen team.',
   },
   {
-    title: 'Yonder Rewards', src: '/projects/yonder-rewards.jpg', href: 'https://b-ward.github.io/yonder-rewards/',
-    description: 'Compare Yonder restaurant rewards by points per pound to find the best value, using data from my tracking spreadsheet.',
-  },
-  {
     title: 'Playlist Slicer', src: '/projects/playlist-slicer-photo.jpg', href: 'https://playlist-slicer.ai.studio/',
     description: 'Connect to Spotify and split a long playlist into smaller playlists with a chosen number of songs.',
   },
