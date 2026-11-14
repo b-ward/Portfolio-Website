@@ -4,7 +4,7 @@ export default function About() {
   return <div className="page-container about-page">
     <header className="page-heading"><h1>About me</h1></header>
     <section className="about-intro" aria-label="Introduction">
-      <div className="prose"><p className="intro-text">Hi! I'm Brendon. I'm a Product Manager based in London with a passion for IT and all things in between.</p><p>I built this site to share my personal projects, professional experience, and interests outside of work. Feel free to get in touch.</p><SocialLinks /></div>
+      <div className="prose"><p className="intro-text">Hi! I'm Brendon, a Product Manager based in London. I'm passionate about unpacking problems and finding practical solutions.</p><p>I built this site to share my personal projects, professional experience, and interests outside of work. Feel free to get in touch.</p><SocialLinks /></div>
       <img className="about-portrait" src="/BrendonWard.png" alt="Brendon Ward" />
     </section>
     <nav className="section-links" aria-label="On this page"><a href="#cv">Experience & CV ↓</a><a href="#about-site">About this site ↓</a></nav>
