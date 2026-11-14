@@ -22,10 +22,6 @@ function ExperienceEntry({ cardTitle, cardBody, imageSrc, listLabel }) {
 
 const CV = () => (
   <section id="cv" className="cv-section" aria-label="Curriculum vitae">
-      <h2 className="cv-section-title">Career Summary</h2>
-      <ExperienceEntry
-        cardBody="G'day! I'm Brendon, an IT Professional with extensive experience in Software Development, Project Management and Cyber Security. I have strong communication, organisational and technical skills to lead cross-functional teams. I am hard working with a passion for all things tech."
-      />
       <h2 className="cv-section-title">Experience</h2>
       <ExperienceEntry
         imageSrc="/CV/mastercard.svg"
